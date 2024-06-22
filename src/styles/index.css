@@ -1,0 +1,63 @@
+/* custom styles */
+@import url("./style.css");
+
+/* tailwind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* base layer */
+@layer base {
+  /* root variables */
+  :root {
+    --primary-color: #10b77f;
+    --main-color: #f4f4f5;
+  }
+  .dark {
+    --main-color: #09090b;
+  }
+
+  body {
+    font-family: "Poppins", sans-serif;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold;
+  }
+  input {
+    @apply outline-none border-none focus:outline-none focus:ring-0;
+  }
+  button {
+    @apply bg-transparent cursor-pointer transition-all outline-none;
+  }
+}
+
+/* component layer */
+@layer components {
+  .container {
+    @apply w-full sm:w-[540px] md:w-[720px] lg:w-[960px] xl:w-[1140px] 2xl:w-[1320px];
+  }
+}
+
+/* some custom utilities classes */
+@layer utilities {
+  .flex-center-between {
+    @apply flex items-center justify-between;
+  }
+  .flex-align-center {
+    @apply flex items-center;
+  }
+  .flex-center-center {
+    @apply flex items-center justify-center;
+  }
+  .grid-center {
+    @apply grid place-content-center;
+  }
+  .transition {
+    @apply transition-all duration-300;
+  }
+}

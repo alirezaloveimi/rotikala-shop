@@ -1,0 +1,30 @@
+/* hero active pagination bullet */
+.swiper-pagination-bullet-active {
+  background-color: var(--primary-color);
+}
+
+/* ring  */
+.product-slide-item::before {
+  content: "";
+  position: absolute;
+  background: radial-gradient(rgb(52, 211, 153), transparent, transparent);
+  width: 700px;
+  height: 700px;
+  transform: translate(-50%, -50%);
+  transition: 0.5s, top 0s, left 0s;
+  opacity: 0;
+  top: var(--y);
+  left: var(--x);
+}
+
+.product-slide-item:hover:before {
+  opacity: 1;
+}
+
+/* react toastify */
+.Toastify__close-button {
+  align-self: center;
+}
+.Toastify__progress-bar--success {
+  background-color: var(--primary-color);
+}
