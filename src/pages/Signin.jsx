@@ -89,10 +89,9 @@ const Signin = () => {
     setError(newError);
 
     if (!Object.values(newError).length) {
-      signin(values);
-
       toast.success("You Sign In Successfuly ✌", {
         onClose: () => {
+          signin(values);
           setError({});
           setValues();
         },
