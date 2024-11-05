@@ -11,7 +11,7 @@ import BlurBox from "../components/BlurBox";
 import { useParams, Navigate } from "react-router-dom";
 
 // hooks
-import { usePathName } from "../hooks/usePathName";
+import { pathName } from "../utils/pathName";
 import { useBasketContext } from "../context/BasketContext";
 import { useUser } from "../context/UserContext";
 
@@ -29,14 +29,12 @@ const Product = () => {
     (product) => product.name === productName.replace(/-/g, " ")
   );
 
-  console.log(selectedProduct);
-
   // product states
   const [productSize, setProductSize] = useState(selectedProduct?.sizes[0]);
   const [productColor, setProductColor] = useState(selectedProduct?.colors[0]);
 
   // get path name array
-  const paths = usePathName();
+  const paths = pathName();
 
   const { addProduct } = useBasketContext();
   const { isSignin } = useUser();

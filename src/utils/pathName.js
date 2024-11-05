@@ -1,7 +1,7 @@
 // react router dom
 import { useLocation } from "react-router-dom";
 
-export const usePathName = () => {
+export const pathName = () => {
   const pathNameArray = useLocation()
     .pathname.split("/")
     .filter((p) => p);

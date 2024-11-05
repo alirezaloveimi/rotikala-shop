@@ -12,13 +12,12 @@ import Footer from "../components/Footer";
 import { allProducts as products } from "../data/data";
 import { icons } from "../data/Icons";
 
-// hooks
-import { usePathName } from "../hooks/usePathName";
+import { pathName } from "../utils/pathName";
 
 const Products = () => {
   const [sortedBy, setSortedBy] = useState("inexpensive");
 
-  const paths = usePathName();
+  const paths = pathName();
 
   // sort the products
   const sortProductsFunc = () => {

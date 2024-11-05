@@ -6,6 +6,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import { useTheme } from "./ThemeContext";
+import { useLocalStorage } from "../hooks/useLocalStorage";
 
 // create new context
 const BasketContext = createContext();
@@ -14,7 +15,7 @@ const BasketContext = createContext();
 export const useBasketContext = () => useContext(BasketContext);
 
 const BasketProvider = ({ children }) => {
-  const [basket, setBasket] = useState([]);
+  const [basket, setBasket] = useLocalStorage("user-basket", []);
 
   // theme
   const { theme } = useTheme();
